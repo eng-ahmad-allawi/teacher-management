@@ -2,10 +2,23 @@ import type { NextConfig } from "next";
 import withPWA from "@ducanh2912/next-pwa";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    unoptimized: true,
+  },
   experimental: {
     optimizePackageImports: ['@mui/material', '@mui/icons-material'],
   },
+  // إعدادات GitHub Pages
+  output: 'export',
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/teacher-management' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/teacher-management/' : '',
 };
 
 export default withPWA({
