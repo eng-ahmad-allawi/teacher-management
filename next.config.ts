@@ -14,11 +14,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['@mui/material', '@mui/icons-material'],
   },
-  // إعدادات GitHub Pages
-  output: 'export',
-  trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/teacher-management' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/teacher-management/' : '',
+  // تم حذف الإعدادات الخاصة بـ GitHub Pages من هنا
 };
 
 export default withPWA({
@@ -31,7 +27,7 @@ export default withPWA({
     disableDevLogs: true,
     runtimeCaching: [
       {
-        urlPattern: /^https?.*/, // Cache all HTTP/HTTPS requests
+        urlPattern: /^https?.*/,
         handler: 'NetworkFirst',
         options: {
           cacheName: 'offlineCache',
